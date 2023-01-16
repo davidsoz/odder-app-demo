@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.products {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.addedProduct {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total {
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 20px;
+}
+
+
