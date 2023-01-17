@@ -74,7 +74,6 @@ function App() {
 
 	function onAddCard(data, id) {
 		let chosenProduct = data.find(product => product.id === id);
-		console.log(chosenProduct);
 		let nextProducts = [...products];
 		nextProducts.push(chosenProduct);
 		setProducts(nextProducts);
@@ -94,8 +93,8 @@ function App() {
 	return (
 		<>
 			{showModal && <Modal onCloseModal={closeModalHandler}>
-				{products.map(product => (
-					<div className={classes.addedProduct}>
+				{products.map((product, index) => (
+					<div key={index} className={classes.addedProduct}>
 						<span>{product.name} </span>
 						<span>{product.price} $</span>
 					</div>
@@ -110,7 +109,7 @@ function App() {
 						<Card key={product.id}>
 							<div>{langValue === "ENG" ? 'name:' : 'დასახელება:'} {product.name}</div>
 							<div>{langValue === "ENG" ? 'Price:' : 'ფასი:'} {product.price}</div>
-							<button onClick={() => onAddCard(PRODUCTS, product.id)}>{langValue === "ENG" ? 'Add to card' : 'დაამატეთ კალათაში'} </button>
+							<button onClick={() => onAddCard(PRODUCTS, product.id)}>{langValue === "ENG" ? 'Add to cart' : 'დაამატეთ კალათაში'} </button>
 						</Card>
 					))}
 				</div>

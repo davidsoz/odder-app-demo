@@ -14,7 +14,7 @@ function Header({onChangeLang}) {
             <div className={classes.LANGS} >
                 <select className={classes['language-bar']} onChange={onChangeLang}>
                     {LANGS.map(lang => (
-                        <option className={classes["lang-item"]} value={lang}>
+                        <option key={lang} className={classes["lang-item"]} value={lang}>
                             {lang}
                         </option>
                     ))}
